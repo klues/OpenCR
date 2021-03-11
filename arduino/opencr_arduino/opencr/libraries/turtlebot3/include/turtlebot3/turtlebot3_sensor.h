@@ -81,6 +81,7 @@ class Turtlebot3Sensor
   // Sound
   void melody(uint16_t* note, uint8_t note_num, uint8_t* durations);
   void makeSound(uint8_t index);  
+  void makeCustomSound(uint8_t frequency, uint8_t duration);
 
   // Bumper
   void initBumper(void);

@@ -296,6 +296,11 @@ void Turtlebot3Sensor::makeSound(uint8_t index)
   melody(note, 8, duration);
 }
 
+void Turtlebot3Sensor::makeCustomSound(uint8_t frequency, uint8_t duration)
+{
+    tone(BDPIN_BUZZER, frequency, duration);
+}
+
 void Turtlebot3Sensor::initBumper(void)
 {
   ollo_.begin(3, TOUCH_SENSOR);
