@@ -1,3 +1,5 @@
+*.iml
+
 # Compiled Object files
 *.slo
 *.lo
