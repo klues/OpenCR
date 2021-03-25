@@ -34,6 +34,7 @@
 #include <turtlebot3_msgs/SensorState.h>
 #include <turtlebot3_msgs/Sound.h>
 #include <turtlebot3_msgs/VersionInfo.h>
+#include <turtlebot3burger/CustomSound.h>
 
 #include <TurtleBot3.h>
 #include "turtlebot3_burger.h"
@@ -72,6 +73,7 @@
 // Callback function prototypes
 void commandVelocityCallback(const geometry_msgs::Twist& cmd_vel_msg);
 void soundCallback(const turtlebot3_msgs::Sound& sound_msg);
+void customSoundCallback(const turtlebot3burger::CustomSound& custom_sound_msg);
 void motorPowerCallback(const std_msgs::Bool& power_msg);
 void resetCallback(const std_msgs::Empty& reset_msg);
 
@@ -132,6 +134,8 @@ char joint_state_header_frame_id[30];
 ros::Subscriber<geometry_msgs::Twist> cmd_vel_sub("cmd_vel", commandVelocityCallback);
 
 ros::Subscriber<turtlebot3_msgs::Sound> sound_sub("sound", soundCallback);
+
+ros::Subscriber<turtlebot3burger::CustomSound> custom_sound_sub("custom_sound", customSoundCallback);
 
 ros::Subscriber<std_msgs::Bool> motor_power_sub("motor_power", motorPowerCallback);
 

@@ -31,6 +31,7 @@ void setup()
 
   nh.subscribe(cmd_vel_sub);
   nh.subscribe(sound_sub);
+  nh.subscribe(custom_sound_sub);
   nh.subscribe(motor_power_sub);
   nh.subscribe(reset_sub);
 
@@ -180,6 +181,14 @@ void commandVelocityCallback(const geometry_msgs::Twist& cmd_vel_msg)
 void soundCallback(const turtlebot3_msgs::Sound& sound_msg)
 {
   sensors.makeSound(sound_msg.value);
+}
+
+/*******************************************************************************
+* Callback function for custom sound msg
+*******************************************************************************/
+void customSoundCallback(const turtlebot3burger::CustomSound& custom_sound_msg)
+{
+  sensors.makeCustomSound(custom_sound_msg.frequency, custom_sound_msg.duration);
 }
 
 /*******************************************************************************

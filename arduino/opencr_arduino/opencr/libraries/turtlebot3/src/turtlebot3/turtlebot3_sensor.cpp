@@ -296,7 +296,7 @@ void Turtlebot3Sensor::makeSound(uint8_t index)
   melody(note, 8, duration);
 }
 
-void Turtlebot3Sensor::makeCustomSound(uint8_t frequency, uint8_t duration)
+void Turtlebot3Sensor::makeCustomSound(uint16_t frequency, uint16_t duration)
 {
     tone(BDPIN_BUZZER, frequency, duration);
 }
