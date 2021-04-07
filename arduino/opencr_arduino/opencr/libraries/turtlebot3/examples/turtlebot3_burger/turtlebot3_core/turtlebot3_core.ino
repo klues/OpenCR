@@ -273,10 +273,9 @@ void publishSensorStateMsg(void)
 
   dxl_comm_result = motor_driver.readEncoder(sensor_state_msg.left_encoder, sensor_state_msg.right_encoder);
 
-  if (dxl_comm_result == true)
+  if (dxl_comm_result == true) {
     updateMotorInfo(sensor_state_msg.left_encoder, sensor_state_msg.right_encoder);
-  else
-    return;
+  }
 
   sensor_state_msg.bumper = sensors.checkPushBumper();
 
